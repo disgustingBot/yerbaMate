@@ -1,0 +1,392 @@
+/*
+Theme Name: COLOCAR AQUI EL NOMBRE DEL TEMA
+Author: Lattedev
+Author URI: https://www.lattedev.com
+Description: The official theme for ...
+Version: 1.0
+
+EN CASO DE NO SER UN TEMA DE WORDPRESS SIMPLEMENTE ELIMINAR ESTE PRIMER COMENTARIO POR COMPLETO
+*/
+
+
+
+/* MAPA DE CONTENIDOS:
+
+1) VARIABLES:
+  1.1) Variables de personalizacion de pagina
+  1.2) Variables de cambio visual relacionado a al ancho de la pantalla
+
+2) MEDIA QUERIES:
+  2.1) min-width:  360px
+  2.2) min-width:  576px
+  2.3) min-width:  768px
+  2.4) min-width:  992px
+  2.5) min-width: 1200px
+
+3) TIPOGRAFIAS:
+
+4) ETIQUETAS GLOBALES:
+
+5) ESTRUCTURA:
+  5.1) Header
+  5.2) HOME:
+    5.2.2) Avobe the fold
+    5.2.3) Section 1
+    5.2.4) Section 2
+  5.3) About Us:
+    5.3.1) Avobe the fold
+    5.3.2) Section 1
+    5.3.3) Section 2
+  5.4) Footer
+
+6) COMPONENTES:
+  6.1) Tarjeta
+  6.2) Formulario
+  6.3) Aside
+
+FIN DE MAPA DE CONTENIDOS */
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                               1) VARIABLES:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+:root {
+
+  /* ---------------------------------------------------------------------------
+  ------------------------------------------------------------------------------
+                 1.1) Variables de personalizacion de pagina
+  ------------------------------------------------------------------------------
+  --------------------------------------------------------------------------- */
+  /* la idea de esto es que sean como controles con los
+  que hacer facilmente diferentes versiones de la pagina */
+
+  /* --topCero: 46px; */
+  /* --topCero: 0px; */
+  --sE: 20;
+  --specialContSpan: 4;
+
+  /* COLORS */
+  /* Al editar colores siempre usar HEX y nunca
+  dejar espacio entre los dos puntos y el color */
+  --color1:#0F0F0F;
+  --color2:#FFFFFF;
+  --color3:#D2AA6C;
+  /* --color4:#EBE1C8; */
+  /* --color5:#F5F0DC; */
+  /* --color6:#FFFAE6; */
+
+  /* SIZES */
+  /* Al editar los tamaños, hacerlo siempre sin unidades
+  sabiendo que el numero corresponde a la cantidad de pixeles */
+  --sizeRa: 16; --sizeRb: 20; --sizeRc: 20; --sizeRd:24;
+  --sizeR: calc(var(--sizeRa) * 1px);
+
+  --size1a: 38; --size1b: 80; --size1c: 64; --size1d:128;
+  --size2a: 33; --size2b: 63; --size2c: 53; --size2d:100;
+  --size3a: 29; --size3b: 50; --size3c: 40; --size3d: 56;
+  --size4a: 24; --size4b: 34; --size4c: 23; --size4d: 35;
+  --size5a: 14; --size5b: 18; --size5c: 18; --size5d: 23;
+  --size6a: 14; --size6b: 16; --size6c: 14; --size6d: 19;
+  --size7a: 12; --size7b: 14; --size7c: 12; --size7d: 18;
+  --size8a: 10; --size8b: 12; --size8c: 10; --size8d: 15;
+
+  --size1: calc(var(--size1a) * 1px);
+  --size2: calc(var(--size2a) * 1px);
+  --size3: calc(var(--size3a) * 1px);
+  --size4: calc(var(--size4a) * 1px);
+  --size5: calc(var(--size5a) * 1px);
+  --size6: calc(var(--size6a) * 1px);
+  --size7: calc(var(--size7a) * 1px);
+  --size8: calc(var(--size8a) * 1px);
+  /* ---------------------------------------------------------------------------
+  ------------------------------------------------------------------------------
+      1.2) Variables de cambio visual relacionado a al ancho de la pantalla
+  ------------------------------------------------------------------------------
+  --------------------------------------------------------------------------- */
+
+}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                            2) MEDIA QUERIES:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          2.1) min-width:  360px
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+@media     screen and (min-width: 360px)  {
+  :root {
+  /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - 400px) / (1024 - 400))); */
+  --sizeR: calc(calc(var(--sizeRa) * 1px) + (var(--sizeRb) - var(--sizeRa)) * ((100vw - 360px) / (768 - 360)));
+
+  --size1: calc(calc(var(--size1a) * 1px) + (var(--size1b) - var(--size1a)) * ((100vw - 360px) / (768 - 360)));
+  --size2: calc(calc(var(--size2a) * 1px) + (var(--size2b) - var(--size2a)) * ((100vw - 360px) / (768 - 360)));
+  --size3: calc(calc(var(--size3a) * 1px) + (var(--size3b) - var(--size3a)) * ((100vw - 360px) / (768 - 360)));
+  --size4: calc(calc(var(--size4a) * 1px) + (var(--size4b) - var(--size4a)) * ((100vw - 360px) / (768 - 360)));
+  --size5: calc(calc(var(--size5a) * 1px) + (var(--size5b) - var(--size5a)) * ((100vw - 360px) / (768 - 360)));
+  --size6: calc(calc(var(--size6a) * 1px) + (var(--size6b) - var(--size6a)) * ((100vw - 360px) / (768 - 360)));
+  --size7: calc(calc(var(--size7a) * 1px) + (var(--size7b) - var(--size7a)) * ((100vw - 360px) / (768 - 360)));
+  --size8: calc(calc(var(--size8a) * 1px) + (var(--size8b) - var(--size8a)) * ((100vw - 360px) / (768 - 360)));
+  }
+
+  .navBar{
+        grid-template-rows: repeat(8,max-content);
+      }
+
+
+}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          2.1) min-width:  576px
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+@media screen and (min-width: 576px) {
+  :root {
+  }
+}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          2.1) min-width:  768px
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  :root {
+    --sizeR: calc(calc(var(--sizeRc) * 1px) + (var(--sizeRd) - var(--sizeRc)) * ((100vw - 768px) / (1200 - 768)));
+
+    --size1: calc(calc(var(--size1c) * 1px) + (var(--size1d) - var(--size1c)) * ((100vw - 768px) / (1200 - 768)));
+    --size2: calc(calc(var(--size2c) * 1px) + (var(--size2d) - var(--size2c)) * ((100vw - 768px) / (1200 - 768)));
+    --size3: calc(calc(var(--size3c) * 1px) + (var(--size3d) - var(--size3c)) * ((100vw - 768px) / (1200 - 768)));
+    --size4: calc(calc(var(--size4c) * 1px) + (var(--size4d) - var(--size4c)) * ((100vw - 768px) / (1200 - 768)));
+    --size5: calc(calc(var(--size5c) * 1px) + (var(--size5d) - var(--size5c)) * ((100vw - 768px) / (1200 - 768)));
+    --size6: calc(calc(var(--size6c) * 1px) + (var(--size6d) - var(--size6c)) * ((100vw - 768px) / (1200 - 768)));
+    --size7: calc(calc(var(--size7c) * 1px) + (var(--size7d) - var(--size7c)) * ((100vw - 768px) / (1200 - 768)));
+    --size8: calc(calc(var(--size8c) * 1px) + (var(--size8d) - var(--size8c)) * ((100vw - 768px) / (1200 - 768)));
+
+
+
+  }
+
+
+
+
+
+  .navBar{
+    grid-template-columns:repeat(8,max-content);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          2.1) min-width:  992px
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+@media screen and (min-width: 992px) {
+  :root {
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          2.1) min-width:  1200px
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+@media  screen and (min-width: 1200px) {
+  :root {
+    --sizeR: calc(var(--sizeRd) * 1px);
+
+    --size1: calc(var(--size1d) * 1px);
+    --size2: calc(var(--size2d) * 1px);
+    --size3: calc(var(--size3d) * 1px);
+    --size4: calc(var(--size4d) * 1px);
+    --size5: calc(var(--size5d) * 1px);
+    --size6: calc(var(--size6d) * 1px);
+    --size7: calc(var(--size7d) * 1px);
+    --size8: calc(var(--size8d) * 1px);
+  }
+}
+
+
+
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                                 LOGIC FOLD
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                              3) TIPOGRAFIAS:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                           4) ETIQUETAS GLOBALES:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+ body{
+   font-size: var(--sizeR);
+ }
+
+ body *{
+   display: grid;
+ }
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                              5) ESTRUCTURA:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+
+.figHeader{
+  border: 1px solid black;
+  margin: auto;
+}
+
+
+.listItem{
+  padding: 10px;
+
+}
+
+.ulP{
+  margin: auto;
+}
+
+.ulReserva{
+  margin: auto;
+  color: indianred;
+  animation: mymove 3s infinite ;
+
+}
+
+.desplegable{
+ display:none;
+ color:red;
+ text-decoration:none;
+ font-weight:400;
+ font-size:15px;
+ padding:10px;
+ font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ text-transform:uppercase;
+ letter-spacing:1px;
+}
+
+
+
+
+.ulP:hover {
+ background:#5b78a7;
+}
+
+.ulP:hover + ul li a {
+ display:block;
+}
+
+
+@keyframes mymove {
+  from {background-color: red;}
+  to {background-color: blue;}
+}
+
+
+
+
+.aboveTheFold{
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoAbove{
+  grid-row: 1;
+  grid-column: 1;
+  display: block;
+  margin: auto;
+  /* height:200px; */
+  /* width:200px; */
+  /* top: 40px; */
+  max-width: 100%;
+  height: auto;
+  top: 20px;
+  left : 0px;
+  right: 0;
+  z-index: 1;
+}
+
+.fondoAbove
+{
+  position: fixed;
+  object-fit: cover;
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  height: 100%;
+  /* height:300px; */
+  /* width:300px; */
+  z-index: -1;
+  left : 0px;
+  right: 0;
+}
+
+.navBar{
+  justify-content: center;
+  height: 51px;
+  width: 100%;
+  background-color: #fff;
+
+
+  font-family: 'Manjari', sans-serif;
+  font-size: medium;
+}
+
+
+.section1{
+  height: 1000px;
+  background: white;
+}
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                              6) COMPONENTES:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */

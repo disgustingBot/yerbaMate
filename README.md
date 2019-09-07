@@ -1,2 +1,2 @@
-# yerbaMate
-Wordpress Theme
+# WordPress Theme
+Custom Wordpress Theme
