@@ -1,30 +1,14 @@
 <?php get_header(); ?>
 
-<main class="">
 
 
 
-
-  <figure class="card parallax">
-    <img class="cardImg            parallax__back" src="<?php echo get_template_directory_uri(); ?>/img/testParalax.jpg" alt="">
-    <figcaption class="cardCaption parallax__base">
-      <h3 class="cardTitle">Experiencias</h3>
-      <p class="cardTxt">Te abrimos un horizonte de actividades de ocio y descanso para que exprimas hasta el último minuto que pases con nosotros.</p>
-    </figcaption>
-  </figure>
-
-  <!-- <div class="paralax">
-
-    <div class="parallax__layer parallax__layer--back">
-      ESTO ES EL BACKGROUND
-    </div>
-    <div class="parallax__layer parallax__layer--base">
-      ESTO ES LA BASE
-    </div>
-  </div> -->
-
-
-  </main>
+  <section class="ATF">
+    <img class="logoATF" src="<?php echo get_template_directory_uri(); ?>/img/logoCalaBassa.png" alt="CBbC GROUP">
+    <video class="bgATF" loop="loop"  autoplay="" playsinline="" muted="" id="" preload="none" src="http://new.cbbcgroup.com/wp-content/uploads/shutterstock_25094927_2-1.mp4">
+			<source type="video/mp4" src="http://new.cbbcgroup.com/wp-content/uploads/shutterstock_25094927_2-1.mp4">
+		</video>
+  </section>
 
 
 
@@ -33,58 +17,56 @@
 
 
 
+  <section class="section">
+
+
+    <figure class="show">
+      <img class="showImg" src="https://picsum.photos/850/?blur=4" alt="">
+      <figcaption class="showCaption">
+        <h3>LOCALIZACIÓN</h3>
+        <p>En nuestros ambientes y restaurantes respirarás y sentirás que hasta el más mínimo detalle está por y para ti.</p>
+        <a class="btn" href="">IBIZA</a>
+        <a class="btn" href="">ANDORRA</a>
+      </figcaption>
+    </figure>
+
+
+    <figure class="show">
+      <img class="showImg" src="https://picsum.photos/900/?blur=4" alt="">
+      <figcaption class="showCaption">
+        <h3>GASTRONOMIA</h3>
+        <p>Cuando te sientes a la mesa, invita a todos tus sentidos. Cada plato presenta colores, sabores, aroma y texturas de auténtica tradición ibicenca. Del mar de un Bullit de Peix, a la tierra de un jamón de pata negra.</p>
+        <a class="btn" href="">Ver más</a>
+      </figcaption>
+    </figure>
+
+
+
+    <figure class="show">
+      <img class="showImg" src="https://picsum.photos/800/?blur=4" alt="">
+      <figcaption class="showCaption">
+        <h3>EXPERIENCIA</h3>
+        <p>Te abrimos un horizonte de actividades de ocio y descanso para que exprimas hasta el último minuto que pases con nosotros.</p>
+        <a class="btn" href="">Ver más</a>
+      </figcaption>
+    </figure>
+
+
+  </section>
 
 
 
 
 
 
+  <section class="section">
+
+    <article>articulo de magazine: gastronomia</article>
+    <article>articulo de magazine: experiencia</article>
+    <article>plan de la agenda: planes</article>
 
 
-<!--
-  <div class="container">
-    <h1>Parallax</h1>
-    <h2>faster</h2>
-    <h2>easier</h2>
-    <h2>sassier</h2>
-    <img src="http://placekitten.com/200/200" alt=" " />
-    <img src="http://placekitten.com/150/200" alt=" " />
-    <img src="http://placekitten.com/200/150" alt=" " />
-    <img src="http://placekitten.com/150/250" alt=" " />
-    <img src="http://placekitten.com/300/400" alt=" " />
-    <img src="http://placekitten.com/400/300" alt=" " />
-  </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </section>
 
 
 

@@ -10,13 +10,19 @@
 
 </head>
 <body>
-  <header>
-    <a href="">
-      <figure>
-        <img src="img/logo.png" alt="">
-        <figcaption>
-          <h2>CBbC Group</h2>
-        </figcaption>
-      </figure>
-    </a>
-  </header>
+
+
+
+    <header class="header">
+      <h2 class="navBar"><a class="headerLink" href="">CbBc Group</a></h2>
+      <nav class="navBar">
+        <a class="headerLink" href="">Localización</a>
+        <a class="headerLink" href="">Gastronomía</a>
+        <a class="headerLink" href="">Experiencias</a>
+        <a class="headerLink" href="">Planes / Eventos</a>
+        <a class="headerLink" href="">CBbC Life. Magazine</a>
+        <a class="headerLink" href="">Galeria</a>
+        <a class="headerLink" href="">Reservas</a>
+      </nav>
+      <button type="button" name="button">en</button>
+    </header>
