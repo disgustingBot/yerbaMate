@@ -37,7 +37,7 @@ const observer2 = new IntersectionObserver(function(entries, observer2){
       entry.target.querySelector(".markerFirstLetter").style.marginLeft = "0";
       entry.target.querySelector(".markerFirstLetter").style.opacity = "1";
 
-      
+
       entry.target.querySelector(".markerSecondLetter").style.marginRight = "0";
       entry.target.querySelector(".markerSecondLetter").style.opacity = "1";
       c.log("activate!");
@@ -48,25 +48,24 @@ const observer2 = new IntersectionObserver(function(entries, observer2){
   })
 }, options);
 
-observer.observe(detector);
-d.querySelectorAll('.sectionMarker').forEach(e => {
-  observer2.observe(e);
-})
+// observer.observe(detector);
+// d.querySelectorAll('.sectionMarker').forEach(e => {
+//   observer2.observe(e);
+// })
 
 
 
 
 // SLIDER:
 var slideIndex = 1;
-showDivs(slideIndex);
-
+if(d.getElementsByClassName("carouselItem").length>0){showDivs(slideIndex);carousel();}
 function plusDivs(n) {
   showDivs(slideIndex += n);
 }
 
 function showDivs(n) {
   var i;
-  var x = document.getElementsByClassName("slide");
+  var x = d.getElementsByClassName("carouselItem");
   if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length} ;
   for (i = 0; i < x.length; i++) {
@@ -77,10 +76,10 @@ function showDivs(n) {
   x[slideIndex-1].classList.remove("inactive");
 }
 
-carousel();
+
 function carousel() {
   var i;
-  var x = document.getElementsByClassName("slide");
+  var x = d.getElementsByClassName("carouselItem");
   for (i = 0; i < x.length; i++) {
     // x[i].style.display = "none";
     x[i].classList.add("inactive");
