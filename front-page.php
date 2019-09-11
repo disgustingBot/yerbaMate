@@ -13,7 +13,7 @@
 
   <section class="section">
     <figure class="show">
-      <img class="showImg parallax" data-parallax="-2" src="<?php echo get_template_directory_uri(); ?>/img/home/localizaciones.jpg" alt="">
+      <img class="showImg parallax" data-parallax="-3" src="<?php echo get_template_directory_uri(); ?>/img/home/localizaciones.jpg" alt="">
       <figcaption class="showCaption">
         <h3>LOCALIZACIÓN</h3>
         <p>En nuestros ambientes y restaurantes respirarás y sentirás que hasta el más mínimo detalle está por y para ti.</p>
