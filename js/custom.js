@@ -47,6 +47,10 @@ function Parallax(className) {
     if (!isAnimating) {
       isAnimating = true;
       elements.forEach(({ el, originalTop, height, speed }) => {
+        // c.log();
+        observer.observe(el);
+        // document.querySelectorAll(`.${className}`).forEach(e => {observer.observe(e);})
+
         const { top: newTop } = el.getBoundingClientRect();
         let translate;
         if (screenHeight >= originalTop) {
@@ -54,13 +58,19 @@ function Parallax(className) {
         } else {
           translate = Math.floor((newTop - height / 2) / speed);
         }
-
         el.style.transform = `translate3d(0, ${translate}px, 0)`;
+        // c.log(translate);
       });
       isAnimating = false;
       animationId = requestAnimationFrame(animate);
     }
   };
+
+
+
+
+
+
 
   const cancelAnimationFrame =
     window.cancelAnimationFrame ||
