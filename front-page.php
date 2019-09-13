@@ -11,7 +11,7 @@
 
 
 
-  <section class="section">
+  <section class="section section1">
     <figure class="show">
       <img class="showImg parallax" data-parallax="-3" src="<?php echo get_template_directory_uri(); ?>/img/home/localizaciones.jpg" alt="">
       <figcaption class="showCaption">
@@ -49,7 +49,7 @@
 
 
 
-  <section class="section sectionArticles">
+  <section class="section sectionArticles section2">
 
     <?php
     $categoria="gastronomia";
@@ -116,7 +116,7 @@
 
 
 
-  <section class="section">
+  <section class="section section3">
 
     <figure class="show">
       <img class="showImg" src="https://picsum.photos/1400/?blur=4" alt="">
