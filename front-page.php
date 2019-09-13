@@ -13,7 +13,7 @@
 
   <section class="section section1">
     <figure class="show">
-      <img class="showImg parallax" data-parallax="-3" src="<?php echo get_template_directory_uri(); ?>/img/home/localizaciones.jpg" alt="">
+      <img class="showImg parallax" data-parallax=".9" src="<?php echo get_template_directory_uri(); ?>/img/home/localizaciones.jpg" alt="">
       <figcaption class="showCaption">
         <h3>LOCALIZACIÓN</h3>
         <p>En nuestros ambientes y restaurantes respirarás y sentirás que hasta el más mínimo detalle está por y para ti.</p>
@@ -24,7 +24,7 @@
 
 
     <figure class="show">
-      <img class="showImg" src="<?php echo get_template_directory_uri(); ?>/img/home/gastronomia.jpg" alt="">
+      <img class="showImg parallax" data-parallax=".6" src="<?php echo get_template_directory_uri(); ?>/img/home/gastronomia.jpg" alt="">
       <figcaption class="showCaption showRight">
         <h3>GASTRONOMIA</h3>
         <p>Cuando te sientes a la mesa, invita a todos tus sentidos. Cada plato presenta colores, sabores, aroma y texturas de auténtica tradición ibicenca. Del mar de un Bullit de Peix, a la tierra de un jamón de pata negra.</p>
@@ -35,7 +35,7 @@
 
 
     <figure class="show">
-      <img class="showImg" src="<?php echo get_template_directory_uri(); ?>/img/home/experiencias.jpg" alt="">
+      <img class="showImg parallax" data-parallax=".9" src="<?php echo get_template_directory_uri(); ?>/img/home/experiencias.jpg" alt="">
       <figcaption class="showCaption">
         <h3>EXPERIENCIA</h3>
         <p>Te abrimos un horizonte de actividades de ocio y descanso para que exprimas hasta el último minuto que pases con nosotros.</p>

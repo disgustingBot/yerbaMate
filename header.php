@@ -16,7 +16,7 @@
 
     <header class="header">
       <h2 class="navBar">
-        <a class="headerLink<?php if(is_front_page()){echo ' active"';} ?>" href="<?php echo site_url(''); ?>">CbBc Group</a>
+        <a class="headerLink<?php if(is_front_page()){echo ' active"';} ?>" href="<?php echo site_url(''); ?>">CBbC Group</a>
       </h2>
       <nav class="navBar">
         <a class="headerLink" href="">Localización</a>
