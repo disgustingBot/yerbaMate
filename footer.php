@@ -6,13 +6,8 @@
   <div class="overlapBackground"></div>
   <div class="footer1">
     <hgroup class="footerTitleContainer">
-      <h3 class="footerCopyTitle">CBbC</h3>
-      <h3 class="footerCopy">La esencia de Ibiza y Andorra<br>para el mundo</h3>
-    </hgroup>
-
-    <hgroup class="visitaNuestraMagazine">
-      <h4 class="liveMagazineh4">Visita nuestra</h4>
-      <h5><a class="liveMagazineH5" href="#">CBbC Life Magazine</a></h5>
+      <h5 class="footerCopyTitle">CBbC</h5>
+      <h5 class="footerCopy">La esencia de Ibiza y Andorra<br>para el mundo</h5>
     </hgroup>
 
     <div class="footerSocialContainer">
@@ -38,20 +33,26 @@
       </div>
     </div>
 
+    <hgroup class="visitaNuestraMagazine">
+      <h4 class="liveMagazineh4">Visita nuestra revista</h4>
+      <h5><a class="liveMagazineH5" href="#">CBbC Life Magazine</a></h5>
+    </hgroup>
+
+    <img class="logoFooter" src="<?php echo get_template_directory_uri(); ?>/img/footer/logo-negro-300x278.png" alt="Logo-CBbC">
+    
 
   </div>
 
   <div class="footer2">
     <p class="Copyrightt">© Copyright 2019 CBbC Group</p>
-    <a href="#"class="Copyright">  •  Ibiza</a>
-    <a href="#"class="Copyright">  •  Andorra</a>
-    <a href="#" class="Copyright">  •  Protección de datos </a>
-    <a href="#" class="Copyright">  •  Política de privacidad</a>
+    <a href="#"class="Copyright">Ibiza</a>
+    <a href="#"class="Copyright">Andorra</a>
+    <a href="#" class="Copyright">Protección de datos </a>
+    <a href="#" class="Copyright">Política de privacidad</a>
     <a href="https://nosotros.gaeapeople.com/" class="Copyright poweredBy" target="_blank">Powered by OmniGaea</a>
   </div>
 
 
-  <img class="logoFooter" src="<?php echo get_template_directory_uri(); ?>/img/footer/logo-negro-300x278.png" alt="Logo-CBbC">
 
 </footer>
 

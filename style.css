@@ -23,6 +23,7 @@ Text Domain: cbbc
   2.3) min-width:  768px
   2.4) min-width:  992px
   2.5) min-width: 1200px
+  2.6) min-width: 1400px
 
 3) TIPOGRAFIAS:
 
@@ -108,6 +109,29 @@ FIN DE MAPA DE CONTENIDOS */
   --size6: calc(var(--size6a) * 1px);
   --size7: calc(var(--size7a) * 1px);
   --size8: calc(var(--size8a) * 1px);
+
+  --footer1TemplateColumns: repeat(3, 1fr);
+  --footer1TemplateRows:  1fr .5fr 1fr .5fr;
+
+  --socialContainerPadding: 0 20%;
+  --socialContainerHeight: 30%;
+
+  --footer2FontSize: .8rem;
+
+  --logoFooterWidth: 200px;
+  --logoFooterPosition: static;
+  --logoFooterLeftPosition: ;
+  --footerTemplateRows: 95vh 5vh;
+
+  --footerTitleContainerGridColumn: 1/4;
+  --visitaNuestraMagazineGridColumn: 1/4;
+  --visitaNuestraMagazineGridRow: 4/5;
+  --footerSocialContainerGridColumn: 1/4;
+  --footerSocialContainerGridRow: 3/4;
+
+
+
+
   /* ---------------------------------------------------------------------------
   ------------------------------------------------------------------------------
       1.2) Variables de cambio visual relacionado a al ancho de la pantalla
@@ -147,7 +171,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          2.1) min-width:  576px
+                          2.2) min-width:  576px
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 @media screen and (min-width: 576px) {
@@ -157,7 +181,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          2.1) min-width:  768px
+                          2.3) min-width:  768px
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 @media screen and (min-width: 768px) {
@@ -173,7 +197,23 @@ FIN DE MAPA DE CONTENIDOS */
     --size7: calc(calc(var(--size7c) * 1px) + (var(--size7d) - var(--size7c)) * ((100vw - 768px) / (1200 - 768)));
     --size8: calc(calc(var(--size8c) * 1px) + (var(--size8d) - var(--size8c)) * ((100vw - 768px) / (1200 - 768)));
 
+    /*Variables Footer*/
+    --footer1TemplateColumns: repeat(9, 1fr);
+    --footer1TemplateRows: repeat(3, 1fr);
+    --socialContainerPadding: 0 10%;
+    --socialContainerHeight: 50%;
+    --footer2FontSize: .8rem;
 
+    --logoFooterWidth: 150px;
+    --logoFooterPosition: fixed;
+    --logoFooterLeftPosition: calc(50% - 75px);
+    --footerTemplateRows: 50vh 5vh;
+
+    --footerTitleContainerGridColumn: 1/4;
+    --visitaNuestraMagazineGridColumn: 7/11;
+    --visitaNuestraMagazineGridRow: 2/3;
+    --footerSocialContainerGridColumn: 4/7;
+    --footerSocialContainerGridRow: 3/4;
 
   }
 }
@@ -182,23 +222,31 @@ FIN DE MAPA DE CONTENIDOS */
   :root{
     --topCero: 0px;
     --topCero: 32px;
+
+
     }
   }
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          2.1) min-width:  992px
+                          2.4) min-width:  992px
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 @media screen and (min-width: 992px) {
   :root {
+    /*Variables Footer*/
+    --socialContainerPadding: 0 20%;
+    --footer2FontSize: .8rem;
+
+    --logoFooterWidth: 200px;
+    --logoFooterLeftPosition: calc(50% - 100px);
   }
 }
 
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          2.1) min-width:  1200px
+                          2.5) min-width:  1200px
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 @media  screen and (min-width: 1200px) {
@@ -213,10 +261,37 @@ FIN DE MAPA DE CONTENIDOS */
     --size6: calc(var(--size6d) * 1px);
     --size7: calc(var(--size7d) * 1px);
     --size8: calc(var(--size8d) * 1px);
+
+    /*Variables Footer*/
+    --socialContainerPadding: 0 10%;
+    --footer2FontSize: .8rem;
   }
 }
 
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          2.6) min-width:  1400px
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+@media  screen and (min-width: 1400px) {
+  :root {
+    --sizeR: calc(var(--sizeRd) * 1px);
 
+    --size1: calc(var(--size1d) * 1px);
+    --size2: calc(var(--size2d) * 1px);
+    --size3: calc(var(--size3d) * 1px);
+    --size4: calc(var(--size4d) * 1px);
+    --size5: calc(var(--size5d) * 1px);
+    --size6: calc(var(--size6d) * 1px);
+    --size7: calc(var(--size7d) * 1px);
+    --size8: calc(var(--size8d) * 1px);
+
+
+/*Variables Footer*/
+    --socialContainerPadding: 0 25%;
+    --footer2FontSize: .9rem;
+  }
+}
 
 
 
@@ -352,6 +427,9 @@ FIN DE MAPA DE CONTENIDOS */
 }
 
 
+.section3 {
+  margin-bottom: 50vh;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -373,7 +451,7 @@ FIN DE MAPA DE CONTENIDOS */
   border-top: solid 1px black;
   width: 100%;
   display: grid;
-  grid-template-rows: 90vh 5vh;
+  grid-template-rows: var(--footerTemplateRows);
   box-shadow: inset 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   background-image: linear-gradient(to bottom, #2D7471, #CFAE75);
   z-index: 0;
@@ -385,6 +463,7 @@ FIN DE MAPA DE CONTENIDOS */
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0,0,0,0), #CFAE75);
+  box-shadow: inset 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   z-index: -2;
 }
 
@@ -392,19 +471,20 @@ FIN DE MAPA DE CONTENIDOS */
 .footer1 {
   color: #18171A;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: var(--footer1TemplateColumns);
+  grid-template-rows: var(--footer1TemplateRows);
 }
 
 .footerTitleContainer {
-  grid-column: span 3;
+  font-size: var(--footerTitleContainerFontSize);
+  width: 100%;
+  grid-column: var(--footerTitleContainerGridColumn);
   margin: auto;
   text-align: center;
-  grid-row: 3/4;
+  grid-row: 2/3;
 }
 
 .footerCopyTitle {
-  font-size: 2rem;
   letter-spacing: 4px;
 }
 
@@ -415,15 +495,20 @@ FIN DE MAPA DE CONTENIDOS */
 }
 
 .visitaNuestraMagazine {
-  grid-row: 3/4;
-  grid-column: span 3;
+  width: 100%;
+  text-align: center;
+  grid-row: var(--visitaNuestraMagazineGridRow);
+  grid-column: var(--visitaNuestraMagazineGridColumn);
   margin: auto;
+  color: #404040;
 }
-
+.liveMagazineh4 {margin-bottom: 4px;}
+.liveMagazineH5{text-decoration: none;color: #1f1f1f; letter-spacing: 2px;}
+.liveMagazineH5:hover {text-decoration: underline overline;}
 
 .footerSocialContainer {
-  grid-row: 3/4;
-  grid-column:  span 3;
+  grid-column:  var(--footerSocialContainerGridColumn);
+  grid-row: var(--footerSocialContainerGridRow);
   display: flex;
   flex-direction:column;
   width: 100%;
@@ -437,11 +522,11 @@ FIN DE MAPA DE CONTENIDOS */
 }
 .socialContainer {
   width: 100%;
-  height: 50%;
+  height: var(--socialContainerHeight);
   margin: auto;
   margin-top: 0;
   display: flex;
-  padding:0 30%;
+  padding: var(--socialContainerPadding);
 }
 
 .socialItem {
@@ -449,21 +534,21 @@ FIN DE MAPA DE CONTENIDOS */
   margin: auto;
 }
 
-.socialItem:nth-child(odd) {
-  margin-top: 0;
-}
+.socialItem:nth-child(odd) {margin-top: 0;}
+.socialItem:nth-child(even) {margin-bottom: 0;}
+
 .socialItem svg {
   color: #18171A;
   width: 30px;
+  margin: 0 5px;footerTitleContainer
 }
 
 .footer2 {
   color: #404040;
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-flow: column;
+  display: flex;
+  flex-wrap: wrap;
   padding: 0 20px;
-  font-size: 1rem;
+  font-size: var(--footer2FontSize);
   font-weight: 600;
   justify-content: center;
   align-items: center;
@@ -473,23 +558,26 @@ FIN DE MAPA DE CONTENIDOS */
 }
 
 .Copyright {
+  margin: auto;
   color: #404040;
   text-decoration: none;
   transition: .2s;
 }
 
-.Copyright:hover {text-decoration: underline;}
+.Copyright:hover {text-decoration: underline overline; color: black;}
 
 .poweredBy:hover{color: #987b4f;}
 
 
 .logoFooter {
-  position: fixed;
-  width: 300px;
+  position: var(--logoFooterPosition);
+  width: var(--logoFooterWidth);
   height: auto;
-  bottom: 40%;
+  margin: auto;
+  grid-column: 1/4;
+  bottom: 30%;
   z-index: -1;
-  left: calc(50% - 150px);
+  left: var(--logoFooterLeftPosition);
 }
 
 
