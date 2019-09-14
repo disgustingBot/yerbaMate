@@ -44,6 +44,7 @@ Text Domain: cbbc
   6.01) =ATF:
   6.01.1) =Home atf:
   6.01.2) =Eventos atf:
+  6.01.3) =Magazine atf:
   6.02) =Header:
   6.03) =Show:
   6.04) =BUTTONS:
@@ -54,6 +55,8 @@ Text Domain: cbbc
   6.06) =Slide:
   6.07) =Small Card:
   6.08) =Load:
+  6.09) =Last Post:
+  6.10) =Title:
 
 7) =ELEMENT SPECIFIC:
 
@@ -146,9 +149,18 @@ FIN DE MAPA DE CONTENIDOS */
 
 
   /* pagina eventos */
-  --sectionStoriesGTC:1fr;
-  --sectionSelectsGTC:1fr 1fr;
   --eventosATFGTC:1fr;
+
+
+
+  /* pagina magazine */
+  --sectionLatestGTC:1fr;
+  --sectionLatestTitleGC:1;
+  --lastPostBigGC:1;
+  --sectionStoriesGTC:1fr;
+  --sectionStoriesTitleGC:1;
+  --sectionSelectsGTC:1fr 1fr;
+  --selectsTitleGC:span 2;
 
 
 
@@ -211,8 +223,16 @@ FIN DE MAPA DE CONTENIDOS */
 --------------------------------------------------------------------------- */
 @media screen and (min-width: 576px) {
   :root {
+    /* pagina magazine */
+    --sectionLatestGTC:1fr 1fr;
+    --sectionLatestTitleGC:span 2;
+    --lastPostBigGC:span 2;
     --sectionStoriesGTC:1fr 1fr;
+    --sectionStoriesTitleGC:span 2;
     --sectionSelectsGTC:1fr 1fr 1fr;
+    --selectsTitleGC:span 3;
+
+
   }
 }
 
@@ -251,11 +271,18 @@ FIN DE MAPA DE CONTENIDOS */
     --postPlanGR: span 2;
 
     --sectionStoriesGTC:1fr 1fr 1fr;
+    --sectionStoriesTitleGC:span 3;
 
 
 
     /* pagina eventos */
     --eventosATFGTC:1fr 1fr;
+
+
+
+    /* pagina magazine */
+    --sectionLatestGTC:1fr 1fr 1fr;
+    --sectionLatestTitleGC:span 3;
 
 
 
@@ -289,7 +316,9 @@ FIN DE MAPA DE CONTENIDOS */
 --------------------------------------------------------------------------- */
 @media screen and (min-width: 992px) {
   :root {
+    /* pagina magazine */
     --sectionSelectsGTC:repeat(5,1fr);
+    --selectsTitleGC:span 5;
     /*Variables Footer*/
     --socialContainerPadding: 0 20%;
     --footer2FontSize: .8rem;
@@ -393,7 +422,9 @@ FIN DE MAPA DE CONTENIDOS */
    display: grid;
    font-family: 'Manjari', sans-serif;
  }
-
+img{
+  object-fit: cover;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                               5) =ESTRUCTURA:
@@ -407,6 +438,7 @@ FIN DE MAPA DE CONTENIDOS */
   width: 100%;
   z-index: 1;
   background: var(--color2);
+  -webkit-transform: translateZ(0);
 }
 
 
@@ -426,24 +458,24 @@ FIN DE MAPA DE CONTENIDOS */
   grid-auto-columns: 100%;
   padding: 2rem;
 }
-
 .slideButton {
   position: relative;
   grid-column: 1;
   grid-row:  1;
   margin: auto;
   border: none;
-  height: 50px;
-  width:  50px;
+  padding: .3rem 1rem;
+  line-height: 3rem;
   z-index:   2;
   color:var(--color2);
   transition: .3s;
-  background: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  font-size: 3rem;
+  background:transparent;
+  cursor: pointer;
 }
 .slideButton:hover{
-  cursor: pointer;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background: rgba(0, 0, 0, 0.85);
+  /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
 }
 .slideLeft {margin-left:  var(--homeSlideButtonMarginX)}
 .slideRight{margin-right: var(--homeSlideButtonMarginX)}
@@ -454,11 +486,15 @@ FIN DE MAPA DE CONTENIDOS */
 .sectionStories{
   display: grid;
   grid-template-columns: var(--sectionStoriesGTC);
+  grid-template-rows: min-content;
+  /* grid-auto-rows: */
   grid-gap: 1rem;
   /* height: 100vh; */
   padding: 2rem;
 }
-
+.sectionStoriesTitle{
+  grid-column: var(--sectionStoriesTitleGC);
+}
 
 
 .sectionFeatured{
@@ -480,10 +516,24 @@ FIN DE MAPA DE CONTENIDOS */
   padding:2rem;
 }
 .selectsTitle{
-  grid-column: span 5;
+  grid-column: var(--selectsTitleGC);
 }
 
 
+
+
+
+
+.sectionLatest{
+  grid-template-rows: min-content;
+  grid-auto-rows: 1fr;
+  grid-template-columns:var(--sectionLatestGTC);
+  grid-gap:1em;
+  padding: 1em;
+}
+.sectionLatestTitle{
+  grid-column:var(--sectionLatestTitleGC);
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                               5.4) =FOOTER:
@@ -536,6 +586,7 @@ FIN DE MAPA DE CONTENIDOS */
   /* width: var(--logoFooterWidth); */
   height: 75vh;
   width: auto;
+  z-index: -1;
 }
 .footerTitleContainer {
   font-size: var(--footerTitleContainerFontSize);
@@ -650,7 +701,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          6.1.1) =Home atf:
+                          6.01.1) =Home atf:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .ATF{
@@ -671,15 +722,6 @@ FIN DE MAPA DE CONTENIDOS */
   /* text-transform: uppercase; */
   margin:auto;
   margin-bottom: 15vh;
-
-
-  /* font-family: 'Great Vibes', cursive; */
-  /* font-family: 'Tangerine', cursive; */
-  font-family: 'Amita', cursive;
-  /* font-family: 'Niconne', cursive; */
-
-
-
 }
 .logoATF{
   grid-row: 1;
@@ -702,7 +744,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                           6.1.2) =Eventos atf:
+                           6.01.2) =Eventos atf:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
@@ -724,7 +766,30 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                              6.2) =Header:
+                           6.01.3) =Magazine atf:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.magazineATF{
+  text-align: center;
+  padding: 50px 2rem;
+  height: 100vh;
+}
+.magazineATFLink{
+  color: var(--color1);
+  text-decoration: none;
+  padding: .5rem 1.5rem;
+  margin: auto;
+  transition: .3s;
+}
+.magazineATFLink:hover{
+  background: var(--color1);
+  color:var(--color2);
+}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                              6.02) =Header:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .header{
@@ -760,6 +825,7 @@ FIN DE MAPA DE CONTENIDOS */
   right:0;
   right:-100vw;
   transition: .5s;
+  justify-content: center;
 }
 .navBarActive{right:0}
 .altLogo{display:var(--altLogoDisplay)}
@@ -770,6 +836,8 @@ FIN DE MAPA DE CONTENIDOS */
   padding: 0 .45rem;
   text-decoration: none;
   transition: .6s;
+  text-align: center;
+  /* margin:auto; */
 }
 .headerLink:hover{
   background: var(--color3);
@@ -785,7 +853,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                              6.3) =Show:
+                              6.03) =Show:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .show{
@@ -824,10 +892,6 @@ FIN DE MAPA DE CONTENIDOS */
   justify-content: center;
   padding: 0 4rem;
   max-width: 500px;
-}
-.showCaptionTitle{
-  font-family: 'Amita', cursive;
-  font-size: 2em;
 }
 /* .filterS{filter:brightness(.5)} */
 
@@ -972,7 +1036,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                            6.5) =Post:
+                            6.05) =Post:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .post{
@@ -997,7 +1061,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                            6.6) =Slide:
+                            6.06) =Slide:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .slide{
@@ -1041,7 +1105,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                            6.7) =Small Card:
+                            6.07) =Small Card:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .smallCard{
@@ -1063,7 +1127,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                            6.8) =Load:
+                            6.08) =Load:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
@@ -1089,6 +1153,47 @@ FIN DE MAPA DE CONTENIDOS */
 @keyframes wheel {
   0%  {transform: rotate(  0deg);}
   100%{transform: rotate(360deg);}
+}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                            6.09) =Last Post:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.lastPost{
+  display:grid;
+  height: 100%;
+}
+.lastPostBig{grid-column:var(--lastPostBigGC);grid-row:span 2}
+.lastPostLink{
+  grid-column: 1;
+  grid-row:1;
+}
+.lastPostImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lastPostCaption{
+  color: var(--color2);
+  grid-column: 1;
+  grid-row:1;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                            6.10) =Title:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.title{
+  font-family: 'Amita', cursive;
+  font-size: 2rem;
 }
 
 
