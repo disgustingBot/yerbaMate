@@ -18,7 +18,7 @@
     );$atf=new WP_Query($args);
     while($atf->have_posts()){$atf->the_post(); ?>
       <figure class="slide inactive carouselItem">
-        <img class="slideImg" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="">
+        <img class="slideImg lazy" data-url="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="">
         <figcaption class="slideCaption">
           <a class="slideLink" href="<?php the_permalink(); ?>">
             <h3><?php the_title(); ?></h3>
@@ -50,7 +50,7 @@
     );$atf=new WP_Query($args);
     while($atf->have_posts()){$atf->the_post(); ?>
       <figure class="smallCard">
-        <img class="smallCardImg" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="">
+        <img class="smallCardImg lazy" data-url="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="">
         <figcaption class="smallCardCaption">
           <a class="smallCardLink" href="<?php the_permalink(); ?>">
             <h3><?php the_title(); ?></h3>
@@ -76,7 +76,7 @@
       );$atf=new WP_Query($args);
       while($atf->have_posts()){$atf->the_post(); ?>
         <figure class="slide">
-          <img class="slideImg" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="">
+          <img class="slideImg lazy" data-url="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="">
           <figcaption class="slideCaption">
             <a class="slideLink" href="<?php the_permalink(); ?>">
               <h3><?php the_title(); ?></h3>
@@ -102,7 +102,7 @@
       );$atf=new WP_Query($args);
       while($atf->have_posts()){$atf->the_post(); ?>
         <figure class="slide slideSmall">
-          <img class="slideImg" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="">
+          <img class="slideImg lazy" data-url="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="">
           <figcaption class="slideCaption">
             <a class="slideLink" href="<?php the_permalink(); ?>">
               <h3><?php the_title(); ?></h3>

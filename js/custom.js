@@ -48,7 +48,6 @@ function Parallax(className) {
       isAnimating = true;
       elements.forEach(({ el, originalTop, height, speed }) => {
         // c.log();
-        observer.observe(el);
         // document.querySelectorAll(`.${className}`).forEach(e => {observer.observe(e);})
 
         const { top: newTop } = el.getBoundingClientRect();
