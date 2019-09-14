@@ -67,7 +67,7 @@
 
 
     <section class="section sectionFeatured">
-      <h2>CBbC FEATURED</h2>
+      <h2 class="title">CBbC destacados</h2>
       <?php
       $args=array(
         'post_type'=>'post',
@@ -93,7 +93,7 @@
 
 
     <section class="section sectionSelects">
-      <h2 class="selectsTitle">CBbC SELECTS</h2>
+      <h2 class="title selectsTitle">CBbC selectos</h2>
       <?php
       $args=array(
         'post_type'=>'post',
