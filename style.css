@@ -45,6 +45,7 @@ Text Domain: cbbc
   6.01.1) =Home atf:
   6.01.2) =Eventos atf:
   6.01.3) =Magazine atf:
+  6.01.4) =Single atf:
   6.02) =Header:
   6.03) =Show:
   6.04) =BUTTONS:
@@ -57,8 +58,11 @@ Text Domain: cbbc
   6.08) =Load:
   6.09) =Last Post:
   6.10) =Title:
+  6.11) =Pagination:
 
 7) =ELEMENT SPECIFIC:
+* encontrar llamada a backgrounds de elementos especificos en:
+* footer.php, en una etiqueta de estilos al final
 
 FIN DE MAPA DE CONTENIDOS */
 
@@ -534,6 +538,15 @@ img{
 .sectionLatestTitle{
   grid-column:var(--sectionLatestTitleGC);
 }
+
+
+
+
+
+.singleContent{
+  padding: 2rem;
+}
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                               5.4) =FOOTER:
@@ -760,7 +773,6 @@ img{
 }
 .eventosATFImg{
   height: 100%;
-  object-fit: cover;
   width: 100%;
 }
 
@@ -785,6 +797,33 @@ img{
 .magazineATFLink:hover{
   background: var(--color1);
   color:var(--color2);
+}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                           6.01.4) =Single atf:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.singleATF{
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  height: 100vh;
+}
+.singleATFImg{
+  grid-column: 1;
+  grid-row:1;
+  width: 100%;
+  height: 100vh;
+  /* filter: grayscale(.8); */
+  filter: brightness(60%);
+}
+.singleATFCaption{
+  grid-column: 1;
+  grid-row:1;
+  text-align: center;
+  color:var(--color2);
+  z-index: 2;
 }
 
 /* ---------------------------------------------------------------------------
@@ -879,7 +918,6 @@ img{
   grid-column: 1;
   grid-row: 1;
   height: 100%;
-  object-fit: cover;
   width: 100vw;
   z-index: -1;
 }
@@ -1056,7 +1094,6 @@ img{
 .postImg{
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 /* ---------------------------------------------------------------------------
@@ -1082,7 +1119,6 @@ img{
 .slideImg{
   width: 100%;
   height: 100%;
-  object-fit: cover;
   grid-column: 1;
   grid-row: 1;
 }
@@ -1118,7 +1154,6 @@ img{
   width: 100%;
   /* height:calc((100vmin - 5rem) * .5); */
   height:30vmin;
-  object-fit: cover;
 }
 .smallCardLink{
   color:inherit;
@@ -1173,7 +1208,6 @@ img{
 .lastPostImg{
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 .lastPostCaption{
   color: var(--color2);
@@ -1196,17 +1230,15 @@ img{
   font-size: 2rem;
 }
 
-
-/* TODO: poner esto en un php con url dinamicas para facil migracion */
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                            7) =ELEMENT SPECIFIC:
+                            6.11) =Pagination:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.showLocalizacion.visible{background-image:url(http://localhost/cbbc/wp-content/themes/cbbc/img/home/localizaciones.jpg)}
-.showGastronomia.visible {background-image:url(http://localhost/cbbc/wp-content/themes/cbbc/img/home/gastronomia.jpg)}
-.showExperiencia.visible {background-image:url(http://localhost/cbbc/wp-content/themes/cbbc/img/home/experiencias.jpg)}
-.showMusica.visible      {background-image:url(http://localhost/cbbc/wp-content/themes/cbbc/img/home/dj.jpg)}
-.showECorp.visible       {background-image:url(http://localhost/cbbc/wp-content/themes/cbbc/img/page-eventos/coorporativos.jpg)}
-.showCFamily.visible     {background-image:url(http://localhost/cbbc/wp-content/themes/cbbc/img/page-eventos/familiares.jpg)}
-.showBodas.visible       {background-image:url(http://localhost/cbbc/wp-content/themes/cbbc/img/page-eventos/bodasBautizosComuniones.jpg)}
+
+.pagination{
+  grid-auto-flow: column;
+  justify-content: center;
+  grid-auto-columns: max-content;
+  grid-gap:.5rem;
+}

@@ -46,7 +46,11 @@
         </figure>
 
       <?php $i++;}wp_reset_query(); ?>
+
     </section>
+    <div class="section pagination">
+      <?php echo paginate_links(); ?>
+    </div>
 
 
 
@@ -147,12 +151,6 @@
       <?php } wp_reset_query(); ?>
 
     </section>
-
-
-
-<div class="pagination">
-  <?php echo paginate_links(); ?>
-</div>
 
 
 
