@@ -3,6 +3,7 @@
 
 
 <div class="destinosContainer">
+
   <a href="#" target="_blank">
     <aside class="ibizaAndorra andorra">
       <div class="ibizaAndorraTxt andorraText">
@@ -12,6 +13,7 @@
       <img class="andorraImg" src="img/andorra.jpg" alt="Mujer-sonriendo-con-los-pirineos-nevados-den-el-fondo">
     </aside>
   </a>
+  
   <a href="#" target="_blank">
     <div class="ibizaAndorraTxt ibizaText">
       <h2>Ibiza</h2>
