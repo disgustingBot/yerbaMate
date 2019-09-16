@@ -141,7 +141,8 @@ FIN DE MAPA DE CONTENIDOS */
   --navBarBackground: var(--color2);
   --navBarGAF: row;
   --navBarHeight: 100vh;
-  --navBarPadding: 2rem;
+  --navBarPadding: 0;
+  /* --navBarPadding: 2rem; */
   --navBarPosition: fixed;
   --onlyMobile: grid;
 
@@ -314,7 +315,7 @@ FIN DE MAPA DE CONTENIDOS */
     --andorraTextRightPosition: 40px;
     --ibizaAndorraTxtWidth: 400px;
     --ibizaAndorraTxtPadding: 20px;
-    --ibizaAndorraHeight: 100vh;
+    --ibizaAndorraHeight: calc(100vh - 50px);
     --andorraIbizaFilter: brightness(40%);
 
 
@@ -740,6 +741,7 @@ img{
   display: grid;
   grid-template-rows: var(--destinosContainerGridTemplateR);
   background:black;
+  height: 100vh;
 }
 
 .destinosContainer a {
@@ -760,7 +762,7 @@ img{
 .andorraImg:hover, .ibizaImg:hover {filter: brightness(70%);}
 
 .ibizaAndorra {
-  width: 100vw;
+  width: 100%;
   height: var(--ibizaAndorraHeight);
   overflow: hidden;
   transition: .25s;
@@ -1023,7 +1025,7 @@ img{
   grid-row: 1;
   justify-content: center;
   padding: 0 4rem;
-  width: 300px;
+  width: 500px;
   max-width: 100%;
 }
 /* .filterS{filter:brightness(.5)} */
