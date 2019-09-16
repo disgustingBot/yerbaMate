@@ -22,7 +22,7 @@
       </h2>
       <nav id="navBar" class="headerCont navBar">
         <a class="headerLink altLogo<?php if(is_front_page()){echo ' headerLinkActive"';} ?>" href="<?php echo site_url(''); ?>">CBbC Group</a>
-        <a class="headerLink" href="">Localización</a>
+        <a class="headerLink<?php if(is_page("localizacion")){echo ' headerLinkActive"';} ?>" href="<?php echo site_url('/localizacion'); ?>">Localización</a>
         <a class="headerLink<?php if(is_category("gastronomia")){echo ' headerLinkActive"';} ?>" href="<?php echo site_url('/category/gastronomia'); ?>">Gastronomía</a>
         <a class="headerLink<?php if(is_category("experiencias")){echo ' headerLinkActive"';} ?>" href="<?php echo site_url('/category/experiencias'); ?>">Experiencias</a>
         <a class="headerLink<?php if(is_page("eventos")){echo ' headerLinkActive"';} ?>" href="<?php echo site_url('/eventos'); ?>">Eventos</a>
