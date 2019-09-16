@@ -955,7 +955,7 @@ img{
   position:var(--navBarPosition);
   width: 100%;
   top:0;
-  right:0;
+  /* right:0; */
   right:-100vw;
   transition: .5s;
   justify-content: center;
@@ -1023,7 +1023,8 @@ img{
   grid-row: 1;
   justify-content: center;
   padding: 0 4rem;
-  max-width: 500px;
+  width: 300px;
+  max-width: 100%;
 }
 /* .filterS{filter:brightness(.5)} */
 
