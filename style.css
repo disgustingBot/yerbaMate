@@ -741,51 +741,59 @@ img{
   display: grid;
   grid-template-rows: var(--destinosContainerGridTemplateR);
   background:black;
-  height: 100vh;
-}
-
-.destinosContainer a {
-  grid-column:1/2;
-  grid-row: var(--destinosContainerAGridR);
-  display: var(--destinosContainerADisplay);
-  position: relative;
+  height: calc(100vh - 50px);
+  margin-bottom: 50px;
 }
 
 
 .andorraImg, .ibizaImg {
-  object-fit: cover;
   width: 100%;
   filter: var(--andorraIbizaFilter);
-  transition: .25s;
+  height: calc(100vh - 50px);
 }
 
-.andorraImg:hover, .ibizaImg:hover {filter: brightness(70%);}
+/* .andorra:hover, .ibiza:hover {filter: brightness(70%);} */
 
 .ibizaAndorra {
+  grid-column:1;
+  grid-row: 1;
+  transition: .25s;
   width: 100%;
   height: var(--ibizaAndorraHeight);
   overflow: hidden;
   transition: .25s;
-  display: flex;
+  display: grid;
 }
+.ibizaAndorra:hover {filter: brightness(140%);}
 
 .andorra {clip-path: var(--andorraShape);}
-
-
-.ibiza {clip-path: var(--ibizaShape);}
+.ibiza   {clip-path: var(--ibizaShape);}
 
 .ibizaAndorraTxt {
+  grid-column:1;
+  grid-row: 1;
+  z-index: 1;
   /* position: var(--ibizaAndorraTxtPosition); */
-  position: absolute;
-  z-index: 2;
   width: var(--ibizaAndorraTxtWidth);
   height: min-content;
   padding: var(--ibizaAndorraTxtPadding);
   color: white;
+  margin: auto;
+}
+.ibizaAndorraLink{
+  grid-column:1;
+  grid-row: 1;
+  position: relative;
 }
 
-.ibizaText   {left: var(--ibizaTextLeftPosition); bottom: 20px; }
-.andorraText {right: var(--andorraTextRightPosition);  top: 20px;}
+.ibizaText   {
+  margin-bottom: 0;
+  margin-left: 0;
+}
+.andorraText {
+  margin-top: 0;
+  margin-right: 0;
+}
 .andorraText h2,.ibizaText  h2 {font-size: 2.5rem;text-align: center;}
 .andorraText p, .ibizaText  p  {font-size: 1.5rem;text-align: justify;}
 
@@ -794,8 +802,7 @@ img{
   position: absolute;
   display: var(--logoIbizaAndorraDisplay);
   left: calc(50% - 125px);
-  top: calc(50% - 115px);
-
+  top:  calc(50% - 115px);
 }
 
 
